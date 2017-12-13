@@ -1,0 +1,35 @@
+# A general purpose playbook — to be augmented
+---
+
+- name: Common debops configuration
+  hosts: [ 'all' ]
+  become: True
+  vars:
+    ansible_become_method: sudo
+
+  environment: '{{ inventory__environment | d({})
+                   | combine(inventory__group_environment | d({}))
+                   | combine(inventory__host_environment  | d({})) }}'
+
+  roles:
+    - role: debops.apt
+    - role: debops.apt_install
+      tags: [ 'role::general_install' ]
+    - role: debops.ntp
+    - role: debops.sshd
+      tags: [ 'role::general_sshd' ]
+    - role: debops.users
+      tags: [ 'role::general_users' ]
+      # If we want to run only the users config:
+      # debops ansible/playbooks/general.yml --tags role::general_users
+
+# Add here more tasks if you want to, or create new playbooks
+#- name: A new task
+#  hosts: [ 'test' ]
+#
+#  environment: '{{ inventory__environment | d({})
+#                   | combine(inventory__group_environment | d({}))
+#                   | combine(inventory__host_environment  | d({})) }}'
+#
+#  roles:
+#    - role: debops.apache

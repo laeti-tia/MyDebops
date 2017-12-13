@@ -1,0 +1,13 @@
+# apt_install common vars: common packages to install
+# https://docs.debops.org/en/latest/ansible/roles/ansible-apt_install/docs/defaults.html
+---
+# Packages to install on all hosts
+apt_install__packages:
+  # Packages that I want to have on all hosts that I manage
+  - bash-completion
+  - git
+  - man
+  - screen
+  - sudo
+  - vim
+  - wget

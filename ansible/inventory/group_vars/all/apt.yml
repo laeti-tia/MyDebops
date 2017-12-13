@@ -1,0 +1,9 @@
+# apt common vars: APT configuration
+# https://docs.debops.org/en/latest/ansible/roles/ansible-apt/docs/defaults.html
+---
+# Add custom repositories and keys here.
+#apt__repositories:
+#  - repo: 'deb http://downloads.perfsonar.net/debian/ perfsonar-jessie-release main'
+#
+#apt__keys: 
+#  - url: 'http://downloads.perfsonar.net/debian/perfsonar-debian-official.gpg.key'

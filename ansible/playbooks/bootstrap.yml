@@ -1,0 +1,26 @@
+# General ansible/debops bootstrap playbook
+---
+
+- name: First bootstrap Python support on hosts missing python
+  hosts: [ 'all' ]
+  gather_facts: False
+  become: True
+
+  roles: 
+    - role: debops.bootstrap/raw
+
+- name: Then bootstrap debops on all hosts
+  hosts: [ 'all' ]
+  become: True
+
+  environment: '{{ inventory__environment | d({})
+                   | combine(inventory__group_environment | d({}))
+                   | combine(inventory__host_environment  | d({})) }}'
+
+  roles:
+    - role: debops.bootstrap
+    - role: debops.sshd
+      tags: [ 'role::sshd:my_config' ]
+      # If we want to run only our sshd config:
+      # debops ansible/playbooks/bootstrap.yml --tags role::sshd:my_config
+

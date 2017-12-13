@@ -1,0 +1,13 @@
+# sshd common vars: sshd configuration
+# https://docs.debops.org/en/latest/ansible/roles/ansible-sshd/docs/defaults.html
+---
+# Wa want the local firewall configuration to permit login from our LAN
+sshd__whitelist: [ '192.168.1.0/24' ]
+
+# These hosts will be known from the configured host and we can directly ssh/git to it.
+sshd__known_hosts: [ 'github.com' ]
+
+# Enable password authentication and raise number of retries (needed if you have many different ssh keys on your client machine)
+#sshd__password_authentication: 'yes'
+#sshd__max_auth_tries: '5'
+

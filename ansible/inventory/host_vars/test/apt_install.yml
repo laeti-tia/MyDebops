@@ -1,0 +1,6 @@
+# apt_install common vars: common packages to install
+# https://docs.debops.org/en/latest/ansible/roles/ansible-apt_install/docs/defaults.html
+---
+# Packages to install on the test server only
+apt_install__packages:
+  - unzip

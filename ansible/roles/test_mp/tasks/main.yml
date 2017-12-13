@@ -1,0 +1,10 @@
+# A test MP only configuration
+# A role containing all tasks related to configuring a perfSONAR MP
+---
+
+#- name: Add a psadmin account to each MP
+#  htpasswd:
+#    path: /etc/perfsonar/toolkit/psadmin.htpasswd
+#    name: myaccount
+#    password: manchester
+

@@ -1,0 +1,9 @@
+# ntp common vars: time syncrhonisation
+# https://docs.debops.org/en/latest/ansible/roles/ansible-ntp/docs/defaults.html
+---
+# Our timezone
+ntp__timezone: 'Africa/Dakar'
+
+# We want to run ntpd
+ntp__daemon: 'ntpd'
+

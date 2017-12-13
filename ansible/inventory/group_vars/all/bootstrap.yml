@@ -1,0 +1,10 @@
+# bootstrap common vars: To boostrap a debops host
+# https://docs.debops.org/en/latest/ansible/roles/ansible-bootstrap/docs/defaults.html
+---
+# Define here the domain used by all of your debops hosts
+#bootstrap__domain: 'edu.pert'
+
+# If you don't want debops to add a 127.0.1.1 entry to /etc/hosts
+# This is needed if you want to define your hosts yourself in the /etc/hosts
+#bootstrap__etc_hosts: False
+
