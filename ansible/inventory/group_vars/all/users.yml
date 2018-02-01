@@ -4,6 +4,11 @@
 # When you want to debug user account configuration
 #users__no_log: false
 
+# Additional groups to create
+users__groups:
+  # The admins group grants ssh access
+  - name: 'admins'
+
 # User list and configuration
 users__accounts:
   - name: 'antoine'

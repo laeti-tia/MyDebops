@@ -8,3 +8,6 @@
 # This is needed if you want to define your hosts yourself in the /etc/hosts
 #bootstrap__etc_hosts: False
 
+# Additional packages needed when bootstrapping a new host
+bootstrap__packages: [ 'git' ]
+

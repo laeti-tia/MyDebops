@@ -1,0 +1,6 @@
+# auth vars: common authentificaiton configuration 
+# Part of debops common playbook: Sera appliqué pour toute machine gérée par Debops
+# https://docs.debops.org/en/latest/ansible/roles/debops.auth/defaults.html
+---
+auth_ldap_conf: False
+auth_nslcd_conf: False

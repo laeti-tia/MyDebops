@@ -1,0 +1,9 @@
+# unattended_upgrades vars: automatic unattended upgrade with APT
+# Part of debops common playbook: Sera appliqué pour toute machine gérée par Debops
+# https://docs.debops.org/en/latest/ansible/roles/ansible-unattended_upgrades/docs/defaults.html
+---
+unattended_upgrades__enabled: True
+unattended_upgrades__remove_unused: True
+# We reboot during the night if any upgraded packet requires it (usually kernel upgrade)
+unattended_upgrades__auto_reboot: True
+#unattended_upgrades__mail_to: [ '' ]
