@@ -7,3 +7,10 @@ ntp__timezone: 'Africa/Dakar'
 # We want to run ntpd
 ntp__daemon: 'ntpd'
 
+# NTP servers, need to be close, low latency
+ntp__servers:
+  - '0.fr.pool.ntp.org iburst'
+  - '1.fr.pool.ntp.org iburst'
+  - '2.fr.pool.ntp.org iburst'
+  - '3.fr.pool.ntp.org iburst'
+
